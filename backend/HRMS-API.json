@@ -1,0 +1,378 @@
+{
+  "info": {
+    "name": "HRMS Platform APIs",
+    "description": "Complete API collection for HRMS Platform - Day 13 Optimized",
+    "version": "2.0"
+  },
+  "auth": {
+    "type": "bearer",
+    "token": "{{token}}"
+  },
+  "folders": [
+    {
+      "name": "1. Authentication",
+      "requests": [
+        {
+          "name": "Register User",
+          "method": "POST",
+          "url": "{{baseUrl}}/api/users/register",
+          "body": {
+            "fullName": "John Doe",
+            "email": "john@example.com",
+            "password": "SecurePass123"
+          }
+        },
+        {
+          "name": "Login User",
+          "method": "POST",
+          "url": "{{baseUrl}}/api/users/login",
+          "body": {
+            "email": "john@example.com",
+            "password": "SecurePass123"
+          }
+        },
+        {
+          "name": "Get All Users",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/users?page=1&limit=10"
+        }
+      ]
+    },
+    {
+      "name": "2. Employee Management",
+      "requests": [
+        {
+          "name": "Create Employee",
+          "method": "POST",
+          "url": "{{baseUrl}}/api/employees/create",
+          "body": {
+            "user": "",
+            "position": "Software Developer",
+            "baseSalary": 50000,
+            "allowances": 5000,
+            "department": "Engineering",
+            "role": "Developer"
+          }
+        },
+        {
+          "name": "Get All Employees",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/employees?page=1&limit=10&department=Engineering&status=Active"
+        },
+        {
+          "name": "Get Employee by ID",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/employees/:employeeId"
+        },
+        {
+          "name": "Update Employee",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/employees/:employeeId",
+          "body": {
+            "position": "Senior Developer",
+            "baseSalary": 60000
+          }
+        },
+        {
+          "name": "Delete Employee",
+          "method": "DELETE",
+          "url": "{{baseUrl}}/api/employees/:employeeId"
+        },
+        {
+          "name": "Get Employee Stats",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/employees/stats"
+        }
+      ]
+    },
+    {
+      "name": "3. Attendance Management",
+      "requests": [
+        {
+          "name": "Mark Attendance",
+          "method": "POST",
+          "url": "{{baseUrl}}/api/attendance/create",
+          "body": {
+            "employeeId": "",
+            "date": "2026-04-16",
+            "status": "Present",
+            "checkIn": "09:00",
+            "checkOut": "18:00"
+          }
+        },
+        {
+          "name": "Get Attendance Records",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/attendance?page=1&limit=20&month=4&year=2026"
+        },
+        {
+          "name": "Update Attendance",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/attendance",
+          "body": {
+            "employeeId": "",
+            "date": "2026-04-16",
+            "status": "Present",
+            "checkIn": "09:15"
+          }
+        },
+        {
+          "name": "Get Activities",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/attendance/activities?page=1&limit=10"
+        }
+      ]
+    },
+    {
+      "name": "4. Payroll Management",
+      "requests": [
+        {
+          "name": "Generate Payroll",
+          "method": "POST",
+          "url": "{{baseUrl}}/api/payroll/generate",
+          "body": {
+            "month": 4,
+            "year": 2026,
+            "bonus": 1000,
+            "taxRate": 10,
+            "pfRate": 12
+          }
+        },
+        {
+          "name": "Get Payroll",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/payroll?month=4&year=2026&status=Pending&page=1&limit=10"
+        },
+        {
+          "name": "Get Payslip by ID",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/payroll/payslip/:payrollId"
+        },
+        {
+          "name": "Get Payslip by Details",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/payroll/payslip?employeeId=:employeeId&month=4&year=2026"
+        },
+        {
+          "name": "Mark as Paid",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/payroll/pay/:payrollId",
+          "body": {}
+        },
+        {
+          "name": "Approve All Payroll",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/payroll/approve",
+          "body": {
+            "month": 4,
+            "year": 2026
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Leave Management (NEW)",
+      "requests": [
+        {
+          "name": "Create Leave Request",
+          "method": "POST",
+          "url": "{{baseUrl}}/api/leave/create",
+          "body": {
+            "employeeId": "",
+            "leaveType": "Casual Leave",
+            "startDate": "2026-04-20",
+            "endDate": "2026-04-22",
+            "reason": "Family emergency",
+            "numberOfDays": 3
+          }
+        },
+        {
+          "name": "Get All Leaves",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/leave?page=1&limit=10&status=Pending"
+        },
+        {
+          "name": "Get Leave by ID",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/leave/:leaveId"
+        },
+        {
+          "name": "Update Leave",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/leave/:leaveId",
+          "body": {
+            "reason": "Updated reason",
+            "numberOfDays": 4
+          }
+        },
+        {
+          "name": "Approve Leave",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/leave/approve/:leaveId",
+          "body": {
+            "status": "Approved",
+            "remarks": "Approved by HR"
+          }
+        },
+        {
+          "name": "Reject Leave",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/leave/approve/:leaveId",
+          "body": {
+            "status": "Rejected",
+            "remarks": "Not approved"
+          }
+        },
+        {
+          "name": "Delete Leave",
+          "method": "DELETE",
+          "url": "{{baseUrl}}/api/leave/:leaveId"
+        },
+        {
+          "name": "Get Leave Balance",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/leave/balance/:employeeId"
+        }
+      ]
+    },
+    {
+      "name": "6. Recruitment - Jobs (NEW)",
+      "requests": [
+        {
+          "name": "Create Job Posting",
+          "method": "POST",
+          "url": "{{baseUrl}}/api/recruitment/job/create",
+          "body": {
+            "title": "Senior Python Developer",
+            "description": "We are looking for an experienced Python developer with expertise in FastAPI and microservices.",
+            "department": "Engineering",
+            "position": "Senior Developer",
+            "requiredExperience": 5,
+            "skills": ["Python", "FastAPI", "PostgreSQL", "Docker"],
+            "salary": {
+              "min": 80000,
+              "max": 120000
+            },
+            "location": "New York, NY",
+            "jobType": "Full-time",
+            "numberOfPositions": 2,
+            "closingDate": "2026-05-16"
+          }
+        },
+        {
+          "name": "Get All Job Postings",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/recruitment/job?page=1&limit=10&status=Open"
+        },
+        {
+          "name": "Get Job Posting",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/recruitment/job/:jobId"
+        },
+        {
+          "name": "Update Job Posting",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/recruitment/job/:jobId",
+          "body": {
+            "status": "Closed"
+          }
+        },
+        {
+          "name": "Delete Job Posting",
+          "method": "DELETE",
+          "url": "{{baseUrl}}/api/recruitment/job/:jobId"
+        }
+      ]
+    },
+    {
+      "name": "7. Recruitment - Applications (NEW)",
+      "requests": [
+        {
+          "name": "Submit Application",
+          "method": "POST",
+          "url": "{{baseUrl}}/api/recruitment/application/submit",
+          "body": {
+            "jobPostingId": "",
+            "candidateName": "Jane Smith",
+            "candidateEmail": "jane.smith@example.com",
+            "candidatePhone": "+1-555-0123",
+            "experience": 6,
+            "skills": ["Python", "FastAPI", "PostgreSQL", "Docker"],
+            "currentCompany": "Tech Corp",
+            "coverLetter": "I am interested in this position because...",
+            "candidateResume": "https://example.com/resume.pdf"
+          }
+        },
+        {
+          "name": "Get All Applications",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/recruitment/application?page=1&limit=10&status=Applied"
+        },
+        {
+          "name": "Get Application",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/recruitment/application/:applicationId"
+        },
+        {
+          "name": "Update Application Status - Shortlist",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/recruitment/application/:applicationId",
+          "body": {
+            "status": "Shortlisted",
+            "rating": 4.5,
+            "feedback": "Great technical skills, strong Python background"
+          }
+        },
+        {
+          "name": "Update Application Status - Select",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/recruitment/application/:applicationId",
+          "body": {
+            "status": "Selected",
+            "rating": 5,
+            "feedback": "Perfect fit for the role"
+          }
+        },
+        {
+          "name": "Update Application Status - Reject",
+          "method": "PUT",
+          "url": "{{baseUrl}}/api/recruitment/application/:applicationId",
+          "body": {
+            "status": "Rejected",
+            "feedback": "Skills do not match our requirements"
+          }
+        },
+        {
+          "name": "Delete Application",
+          "method": "DELETE",
+          "url": "{{baseUrl}}/api/recruitment/application/:applicationId"
+        },
+        {
+          "name": "Get Job Applications",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/recruitment/job/:jobPostingId/applications?page=1&limit=10"
+        }
+      ]
+    },
+    {
+      "name": "8. Utilities",
+      "requests": [
+        {
+          "name": "Health Check",
+          "method": "GET",
+          "url": "{{baseUrl}}/api/health"
+        },
+        {
+          "name": "Swagger Documentation",
+          "method": "GET",
+          "url": "{{baseUrl}}/api-docs"
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "baseUrl": "http://localhost:5000",
+    "token": ""
+  },
+  "notes": "HRMS Platform API Collection - Day 13 Optimized\n\n## Setup Instructions\n1. Update baseUrl if different from localhost:5000\n2. Register a user or login to get a token\n3. Copy the token and paste in the 'token' variable\n4. Use Bearer authentication for protected endpoints\n\n## Key Features\n- ✅ All 6 API modules included\n- ✅ Pagination support on list endpoints\n- ✅ Error handling demonstrations\n- ✅ Complete leave management workflow\n- ✅ Full recruitment system workflow\n- ✅ Optimized database queries\n\n## Database Indexes\nAll models have optimized indexes for:\n- Department filtering\n- Status filtering\n- Date range queries\n- Email uniqueness\n\n## Response Format\nAll endpoints return:\n{ success, message, data, pagination, error, timestamp }\n\n## Common Issues & Solutions\n- 401 Unauthorized: Add Bearer token to Authorization header\n- 404 Not Found: Verify resource ID is correct\n- 409 Conflict: Resource already exists (check for duplicates)\n- 400 Validation Error: Check request body format"
+}

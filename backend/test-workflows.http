@@ -1,0 +1,28 @@
+### Test AI Workflows API
+
+### 1. Trigger Attendance Workflow
+POST http://localhost:3000/api/ai/workflows/trigger
+Content-Type: application/json
+
+{
+  "type": "attendance",
+  "id": "60b8d442f1d2b30015f8e5d1" 
+}
+
+### 2. Trigger Recruitment Workflow
+POST http://localhost:3000/api/ai/workflows/trigger
+Content-Type: application/json
+
+{
+  "type": "recruitment",
+  "id": "60b8d442f1d2b30015f8e5d2"
+}
+
+### 3. Run System-wide AI Audit
+GET http://localhost:3000/api/ai/workflows/audit
+
+### 4. Check Workflow Status (Stub)
+GET http://localhost:3000/api/ai/workflows/status/any-job-id
+
+### 5. Test Enhanced AI Analysis (Existing)
+GET http://localhost:3000/api/ai/full-analysis/60b8d442f1d2b30015f8e5d1

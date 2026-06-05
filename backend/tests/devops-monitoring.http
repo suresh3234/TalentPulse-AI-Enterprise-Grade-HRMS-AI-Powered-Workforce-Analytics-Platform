@@ -1,0 +1,23 @@
+### DevOps Monitoring Endpoints Test
+
+@baseUrl = http://localhost:5000/api
+
+### 1. Get Comprehensive Metrics
+GET {{baseUrl}}/devops/metrics
+Content-Type: application/json
+
+### 2. Get Detailed Health Status
+GET {{baseUrl}}/devops/health
+Content-Type: application/json
+
+### 3. Get Recent Error Logs
+GET {{baseUrl}}/devops/logs?limit=10
+Content-Type: application/json
+
+### 4. Basic Health Check (Public)
+GET {{baseUrl}}/health
+Content-Type: application/json
+
+### 5. Readiness Check
+GET {{baseUrl}}/health/ready
+Content-Type: application/json

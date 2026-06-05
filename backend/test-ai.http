@@ -1,0 +1,34 @@
+### Test Recruitment AI
+POST http://localhost:3000/api/ai/recruitment
+Content-Type: application/json
+
+{
+  "skills": 80,
+  "experience": 5,
+  "interviewScore": 85
+}
+
+###
+
+### Test Attendance AI
+GET http://localhost:3000/api/ai/attendance
+
+###
+
+### Test Performance AI
+GET http://localhost:3000/api/ai/performance
+
+###
+
+### Test AI Alerts
+GET http://localhost:3000/api/ai/alerts
+
+###
+
+### Test AI Recommendations
+GET http://localhost:3000/api/ai/recommendations
+
+###
+
+### Test AI Performance Summary
+GET http://localhost:3000/api/ai/performance-summary

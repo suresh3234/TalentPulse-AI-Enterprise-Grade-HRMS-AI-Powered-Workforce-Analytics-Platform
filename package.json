@@ -1,0 +1,21 @@
+{
+  "name": "hrms-platform",
+  "version": "1.0.0",
+  "description": "Full-stack HRMS Platform",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "start": "pm2 start ecosystem.config.js",
+    "stop": "pm2 stop all",
+    "restart": "pm2 restart all",
+    "logs": "pm2 logs",
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "build": "npm --prefix frontend run build",
+    "test": "npm --prefix backend run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
