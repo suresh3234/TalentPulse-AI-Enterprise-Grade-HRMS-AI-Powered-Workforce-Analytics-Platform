@@ -460,10 +460,10 @@ This software is distributed under the **ISC License**. Details are available in
 
 ## 👤 Author / Contact
 
-* **GitHub**: [https://github.com/your-username](https://github.com/your-username)
-* **LinkedIn**: [https://linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
-* **Portfolio**: [https://your-portfolio.com](https://your-portfolio.com)
-* **Email**: [your.email@example.com](mailto:your.email@example.com)
+* **GitHub**: https://github.com/suresh3234
+* **LinkedIn**: www.linkedin.com/in/
+suresh-devaramane-626071346 
+* **Email**: devaramanesuresh@gmail.com
 
 ---
 
