@@ -1,4 +1,4 @@
-# 🤖 TalentPulse AI — Enterprise-Grade HRMS & AI-Powered Workforce Analytics Platform
+<img width="1888" height="910" alt="Screenshot 2026-06-06 140533" src="https://github.com/user-attachments/assets/20e3f819-5acc-48ed-81e2-cf33ad768aa5" /># 🤖 TalentPulse AI — Enterprise-Grade HRMS & AI-Powered Workforce Analytics Platform
 
 > A decoupled, resilient, and role-aware human resource management system featuring deterministic payroll calculation, statistical anomaly detection, and real-time candidate evaluation.
 
@@ -15,6 +15,12 @@
 ---
 
 ## 📷 Demo / Screenshot
+<img width="1888" height="910" alt="Screenshot 2026-06-06 140533" src="https://github.com/user-attachments/assets/a38fb8d2-41bd-494d-89af-543326829bcf" />
+<img width="1878" height="915" alt="Screenshot 2026-06-06 140628" src="https://github.com/user-attachments/assets/97c1dbcc-217e-4187-845a-997242a45a62" />
+<img width="1905" height="883" alt="Screenshot 2026-06-06 141044" src="https://github.com/user-attachments/assets/eecf48a2-775e-415f-9970-d636a2e50736" />
+<img width="1886" height="908" alt="Screenshot 2026-06-06 140935" src="https://github.com/user-attachments/assets/ae6e55f9-9ae4-432c-9772-30fa5998d3fb" />
+<img width="1570" height="817" alt="Screenshot 2026-06-06 141304" src="https://github.com/user-attachments/assets/336ebc4e-327d-4d06-87b7-fbe5bc60439a" />
+
 
 ```text
 ========================================================================
